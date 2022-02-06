@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.label-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    padding: 4rem;
+    width: 600px;
+}
+label {
+    width: 90px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: .5rem;
+    position: relative;
+    color: #0000ff;
+    background-color: #fff;
+    border-radius: .5rem;
+    text-shadow: 0 0 .15rem rgba(0, 0, 255, .5);
+    cursor: pointer;
+}
+label::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to top right, #0000ff, #00ffff);
+    box-shadow: 0 0 .5rem rgba(0, 0, 255, .5);
+    border-radius: .5rem;
+    z-index: -1;
+    transition: 100ms ease-in-out inset;
+}
+span {
+    user-select: none;
+    font-size: 1.1rem;
+}
+
+#music_btn:checked ~ .label-container label[for="music_btn"]::before {
+    inset: -10px;
+}
+#movie_btn:checked ~ .label-container label[for="movie_btn"]::before {
+    inset: -10px;
+}
+#sport_btn:checked ~ .label-container label[for="sport_btn"]::before {
+    inset: -10px;
+}
+#travel_btn:checked ~ .label-container label[for="travel_btn"]::before {
+    inset: -10px;
+}
+#tech_btn:checked ~ .label-container label[for="tech_btn"]::before {
+    inset: -10px;
+}
+#books_btn:checked ~ .label-container label[for="books_btn"]::before {
+    inset: -10px;
+}
+
+input {
+    display: none;
+}
